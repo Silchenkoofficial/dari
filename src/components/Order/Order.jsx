@@ -7,6 +7,9 @@ import emailjs, { init } from 'emailjs-com';
 import AddressInput from '../AddressInput';
 
 import './Order.min.css';
+import { AddressSuggestions } from 'react-dadata';
+
+const token = '1bf93b8ba4f31ad2102f71ac66f759d0e9905d6d';
 
 function Order({closeOrderModal, optional}) {
 
@@ -22,7 +25,6 @@ function Order({closeOrderModal, optional}) {
     ];
     const [activeChoice, setActiveChoice] = useState(null);
     const [delivery, setDelivery] = useState(null);
-    const [address, setAddress] = useState(null);
     const [openAdd, setOpenAdd] = useState(false);
     const [sending, setSending] = useState(false);
     const [error, setError] = useState(false);
@@ -36,8 +38,10 @@ function Order({closeOrderModal, optional}) {
         check0: false,
         check1: false,
         check4: '',
-        delivery: '',
-        address: address
+        delivery: false,
+        pickUp: false,
+        address: '',
+        date: ''
     });
     const onSelectedChoice = (index, box) => {
         setActiveChoice(index);
@@ -268,11 +272,41 @@ function Order({closeOrderModal, optional}) {
                         }
                     </div>
                     {
-                            delivery === 0 ? 
+                            delivery === 0 && 
                             <div className="address">
-                                <AddressInput />
-                            </div> : 
+                                <AddressSuggestions
+                                    token={token}
+                                    defaultQuery="Введите адрес доставки"
+                                    value={orderData.address}
+                                    onChange={(e) => setOrderData({
+                                        ...orderData,
+                                        address: e.value
+                                    })}
+                                    count={5}
+                                    filterLocations={[{"kladr_id": "78"}]} />
+                            </div>
+                    }
+                    { 
+                            delivery === 1 &&
                             <div className="pick-point">
+                                <select className="main__form-group--select">
+                                    <option
+                                        onSelect={() => {
+                                            setOrderData({
+                                                ...orderData,
+                                                address: 'Балтийский бульвар, д. 4'
+                                            });
+                                        }}
+                                    >Балтийский бульвар, д. 4</option>
+                                    <option
+                                        onSelect={() => {
+                                            setOrderData({
+                                                ...orderData,
+                                                address: 'Воронежская улица, д. 37'
+                                            });
+                                        }}
+                                    >Воронежская улица, д. 37</option>
+                                </select>
                                 {/* <input
                                     type="text"
                                     className="main__form-group--input"
@@ -286,6 +320,20 @@ function Order({closeOrderModal, optional}) {
                                     })} /> */}
                             </div>
                         }
+                </div>
+                {/* TODO: Дата получения */}
+                <div className="main__form-group">
+                    <div className="main__form-group--label">
+                        Дата получения:
+                    </div>
+                    <InputMask
+                        className="main__form-group--input"
+                        placeholder="дд.мм.гггг"
+                        mask="99.99.9999"
+                        onChange={(e) => setOrderData({
+                            ...orderData,
+                            date: e.target.value
+                        })} />
                 </div>
                 <div className="main__submit">
                     {/* <div className="price">{price} ₽</div> */}

@@ -26,7 +26,7 @@ function Delivery() {
                             justifyContent: 'space-between'
                         }}>
                             <p>Стоимость доставки по СПб<br />в пределах КАД</p>
-                            <p style={{fontWeight: 'bold'}}>350₽</p>
+                            <p style={{fontWeight: 'bold'}}>300₽</p>
                         </p>
                         <p className="block__desc--text" style={{
                             marginTop: 20,
@@ -36,6 +36,26 @@ function Delivery() {
                             justifyContent: 'space-between'
                         }}>
                             <p>Самовывоз со станции<br />метро Ленинский проспект</p>
+                            <p style={{fontWeight: 'bold'}}>Бесплатно</p>
+                        </p>
+                        <p className="block__desc--text" style={{
+                            marginTop: 20,
+                            marginBottom: 20,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'space-between'
+                        }}>
+                            <p>Самовывоз c Балтийского<br />бульвара, д. 4</p>
+                            <p style={{fontWeight: 'bold'}}>Бесплатно</p>
+                        </p>
+                        <p className="block__desc--text" style={{
+                            marginTop: 20,
+                            marginBottom: 20,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'space-between'
+                        }}>
+                            <p>Самовывоз с Воронежской<br />улицы, д. 37</p>
                             <p style={{fontWeight: 'bold'}}>Бесплатно</p>
                         </p>
                         {/* <p className="block__desc--text" style={{
