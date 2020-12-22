@@ -4,8 +4,11 @@ import App from './App';
 
 import 'normalize.css';
 import './styles/main.css';
+import 'react-dadata/dist/react-dadata.css';
 
 ReactDOM.render(
-    <App />,
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
   document.getElementById('root')
 );

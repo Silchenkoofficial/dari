@@ -1,0 +1,13 @@
+export { default as book} from './book.png';
+export { default as brezel} from './brezel.png';
+export { default as champagne} from './champagne.png';
+export { default as cookies} from './cookies.png';
+export { default as cup} from './cup.png';
+export { default as diary} from './diary.png';
+export { default as ginderbread} from './ginderbread.png';
+export { default as honey} from './honey.png';
+export { default as hotChocolate} from './hot-chocolate.png';
+export { default as light} from './light.png';
+export { default as scarf} from './scarf.png';
+export { default as beze} from './beze.png';
+export { default as candle} from './candle.png';

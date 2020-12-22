@@ -1,0 +1,39 @@
+// out: ./Footer.min.css, compress: true
+
+@import './../../../../styles/__modules.less';
+
+.footer {
+    padding: 15px;
+    background-color: @brown;
+    color: #fff;
+    &__logo {
+        font-size: 32px;
+        text-transform: uppercase;
+    }
+    &__menu {
+        ul {
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin: 15px 0;
+                padding: 15px 0;
+                font-size: 20px;
+                text-transform: uppercase;
+                border-bottom: 1px solid #fff;
+                &:active {
+                    background-color: rgba(#000000, 0.1);
+                }
+                svg {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+        }
+    }
+    &__copyright {
+        text-align: center;
+        padding-top: 15px;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,41 @@
+// out: ./About.min.css, compress: true
+
+@import './../../../../styles/__modules.less';
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__main {
+        .block {
+            padding: 19px 0 0;
+            background-color: #EBE7E1;
+            &__title {
+                padding: 0px 15px;
+                display: flex;
+                align-items: center;
+                h1 {
+                    font-family: "PT sans", sans-serif;
+                    font-size: 18px;
+                    font-weight: 700;
+                }
+                &--icon {
+                    margin-right: 12px;
+                    min-width: 60px;
+                    min-height: 60px;
+                }
+            }
+            &__desc {
+                padding: 0px 15px;
+                margin-top: 8px;
+                font-family: "PT Sans", sans-serif;
+                font-size: 18px;
+            }
+            &__img {
+                margin-top: 20px;
+                width: 100%;
+                height: 170px;
+            }
+        }
+    }
+}

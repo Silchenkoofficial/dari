@@ -1,0 +1,192 @@
+// out: ./Variants.min.css, compress: true
+
+@import './../../../../styles/__modules.less';
+
+.variants {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .tabs {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .tab {
+            flex: 0 1 49%;
+            padding: 14px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #EFEBE3;
+            color: rgba(@brown, 0.5);
+            border-radius: 30px 30px 0 0;
+
+            font-family: "PT sans", sans-serif;
+            font-size: 18px;
+
+            cursor: pointer;
+            &.active {
+                background-color: #fff;
+                color: @red;
+            }
+        }
+    }
+    &__main {
+        width: 100%;
+        padding: 23px 0;
+        background-color: #fff;
+        .block {
+            .slider {
+                .slide {
+                    // max-height: 200px;
+                    img {
+                        max-width: 100%;
+                        max-height: 250px;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+                &__dots {
+                    span {}
+                }
+            }
+            &__wrapper {
+                padding: 20px 0 0 15px;
+            }
+            &__tabs {
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                .block__tab {
+                    font-family: "PT Sans", sans-serif;
+                    font-size: 18px;
+                    text-transform: uppercase;
+                    color: rgba(@brown, 0.5);
+                    cursor: pointer;
+                    &.active {
+                        color: @brown;
+                        border-bottom: 1px solid @brown;
+                    }
+                }
+            }
+            &__desc {
+                height: 270px;
+                font-family: "PT sans", sans-serif;
+                font-size: 18px;
+                p {
+                    margin-left: 15px;
+                    margin-right: 15px;
+                    margin-bottom: 10px;
+                    font-style: italic;
+                }
+                &--add {
+                    padding: 10px 15px;
+                    background-color: #EFEBE3;
+                    border-radius: 20px 0 0 20px;
+                    line-height: 18px;
+                }
+            }
+            &__include {
+                height: 270px;
+                overflow-y: scroll;
+                margin-right: 15px;
+                background-color: #EFEBE3;
+                padding: 8px 16px 22px 16px;
+                border-radius: 20px;
+                ul {
+                    &::-webkit-scrollbar { width: 0; }
+                    li {
+                        display: flex;
+                        align-items: center;
+
+                        font-family: "PT sans", sans-serif;
+                        font-size: 18px;
+
+                        img {
+                            min-width: 23px;
+                            min-height: 23px;
+                            max-width: 26px;
+                            max-height: 26px;
+                            margin-right: 13px;
+                        }
+                        label {
+                            position: relative;
+                            width: 100%;
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                right: 0;
+                                width: 16px;
+                                height: 16px;
+                                border: 3px solid #fff;
+                                background-color: #fff;
+                                border-radius: 50%;
+                            }
+                        }
+                        input {
+                            position: absolute;
+                            width: 1px;
+                            height: 1px;
+                            opacity: 0;
+                            margin-left: auto;
+                            &:checked + label::after {
+                                background-color: @red;
+                                padding: 3px;
+                            }
+                        }
+                    }
+                    li + li {
+                        margin-top: 10px;
+                    }
+                }
+            }
+            &__bottom {
+                margin-right: 15px;
+                display: flex;
+                flex-direction: column;
+            }
+            &__price {
+                padding: 20px 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 22px;
+                .old,
+                .new {
+                    font-family: "PT Sans", sans;
+                }
+                .old {
+                    margin-right: 13px;
+                    color: rgba(152, 143, 139, 0.5);
+                    text-decoration: line-through;
+                }
+                .new {
+                    color: @red;
+                }
+            }
+            &__buy {
+                margin: 0 auto;
+                width: 85%;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #fff;
+                border: 2px solid @red;
+                border-radius: 50px;
+                
+                font-family: "PT Sans", sans-serif;
+                font-weight: bold;
+                font-size: 18px;
+                color: @red;
+
+                &:active {
+                    .onPressed;
+                    background-color: @red;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

@@ -1,15 +1,19 @@
 import React from 'react';
+import {useMediaQuery} from 'react-responsive';
 
-import {About, Header, Variants, WhatInside} from './components';
+import {Desktop, Mobile} from './Screens';
 
 function App() {
+  
+  const isDesktopOrMobile = useMediaQuery({
+    query: '(min-width: 800px)'
+  })
   return (
     <div className="App">
-        <Header />
-        <About />
-        <WhatInside />
-        <Variants />
-        <div className="section"></div>
+        {/* {
+          isDesktopOrMobile ? <Desktop /> : <Mobile />
+        } */}
+        <Mobile />
     </div>
   );
 }
